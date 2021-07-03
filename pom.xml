@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.graphhopper</groupId>
+    <artifactId>graphhopper-map-matching-parent</artifactId>
+    <name>GraphHopper Map Matching Parent Project</name>
+    <version>3.0-SNAPSHOT</version>
+    <packaging>pom</packaging> 
+    <url>https://www.graphhopper.com</url> 
+    <inceptionYear>2012</inceptionYear>
+    <description>
+        Super pom of the GraphHopper Map Matching component
+    </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <slf4j.version>1.7.26</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <gh.version>1f5419977ed205d48d5507b65fae231592e52c5b</gh.version>
+
+        <dropwizard.version>2.0.8</dropwizard.version>
+        <jackson.version>2.10.3</jackson.version>
+
+        <org-netbeans-modules-editor-indent.CodeStyle.project.indent-shift-width>4
+        </org-netbeans-modules-editor-indent.CodeStyle.project.indent-shift-width>
+        <org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab>4
+        </org-netbeans-modules-editor-indent.CodeStyle.project.spaces-per-tab>
+        <org-netbeans-modules-editor-indent.CodeStyle.project.tab-size>8
+        </org-netbeans-modules-editor-indent.CodeStyle.project.tab-size>
+        <org-netbeans-modules-editor-indent.CodeStyle.project.text-limit-width>100
+        </org-netbeans-modules-editor-indent.CodeStyle.project.text-limit-width>
+        <org-netbeans-modules-editor-indent.CodeStyle.project.expand-tabs>true
+        </org-netbeans-modules-editor-indent.CodeStyle.project.expand-tabs>
+        <org-netbeans-modules-editor-indent.CodeStyle.usedProfile>project
+        </org-netbeans-modules-editor-indent.CodeStyle.usedProfile>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.redundantIfBraces>LEAVE_ALONE
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.redundantIfBraces>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignJavadocExceptionDescriptions>true
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignJavadocExceptionDescriptions>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignJavadocParameterDescriptions>true
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignJavadocParameterDescriptions>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.blankLinesAfterClassHeader>0
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.blankLinesAfterClassHeader>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapCommentText>false
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapCommentText>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapOneLineComment>false
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.wrapOneLineComment>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineMethodParams>true
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineMethodParams>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineFor>true
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineFor>
+        <org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineTryResources>true
+        </org-netbeans-modules-editor-indent.text.x-java.CodeStyle.project.alignMultilineTryResources>
+    </properties>
+    
+    <scm>
+        <connection>scm:git:git@github.com:graphhopper/map-matching.git</connection>
+        <developerConnection>scm:git:git@github.com:graphhopper/map-matching.git</developerConnection>
+        <url>git@github.com:graphhopper/map-matching.git</url>
+    </scm>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>karussell</id>
+            <name>Peter Karich</name>
+            <email>my.name@graphhopper.com</email>
+        </developer>
+    </developers>
+    
+    <mailingLists>
+        <mailingList>
+            <name>GraphHopper</name>
+            <subscribe>https://discuss.graphhopper.com/</subscribe>
+            <archive>https://discuss.graphhopper.com/</archive>
+        </mailingList>
+    </mailingLists>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/graphhopper/map-matching/issues</url>
+    </issueManagement>
+    <modules>
+        <module>hmm-lib</module>
+        <module>matching-core</module>
+        <module>matching-web-bundle</module>
+        <module>matching-web</module>
+        <module>Matching</module>
+    </modules>
+        
+    <build>        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>        
+                    <fork>true</fork>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <argLine>-Xmx130m -Xms130m</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub GraphHopper Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/graphhopper/map-matching</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub GraphHopper Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/graphhopper/graphhopper</url>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <!-- use this for development if you want to use the GH core source code on your disk -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <gh.version>${version}</gh.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>release</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+            
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>        
+    </profiles>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
+    </dependencies>
+    
+</project>

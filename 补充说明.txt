@@ -1,0 +1,13 @@
+main函数在
+Ada-map-matching-master\Matching\src\main\java\Matching.java
+中，其中整体匹配过程为main函数中的matchWithSpecificMethod函数，从属mapMatching类
+
+核心算法在
+Ada-map-matching-master\matching-core\src\main\java\com\graphhopper\matching\MapMatching.java
+中，对应的函数为AdaMatch
+AdaMatch算法的具体步骤已经模块化处理并作好注释
+
+由于算法中将相邻间距小于2倍取样半径的候选点全部删除以防止绕路，
+因此匹配长度大概率比实际长度要短一些（少了部分头和尾），
+当总长度很小的时候，匹配长度比总长度短的部分所占的比例很容易超过5%但实际上匹配仍然正确
+因此建议将误差范围扩展到-10%~+5%。
