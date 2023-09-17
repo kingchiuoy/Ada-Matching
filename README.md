@@ -1,5 +1,7 @@
 ## AMM
 
+The latest version is available at https://github.com/Hanwen-Hu/AMM.
+
 ### Usage
 
 The Map Matching algorithm is running on [Graphhopper](https://github.com/graphhopper/map-matching).
